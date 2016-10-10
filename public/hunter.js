@@ -5,7 +5,7 @@ var express = require('express');
 var logger = require('morgan');
 var path = require('path');
 var app = express();
-var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
+var PORT = process.env.PORT || 3003; // Sets an initial port. We'll use this later in our listener
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
