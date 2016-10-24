@@ -8,4 +8,3 @@ A website for an opera singer.
 	calendar
 		google calendar api!
 		oauth!
-		fuck
