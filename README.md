@@ -8,3 +8,4 @@ A website for an opera singer.
 	calendar
 		google calendar api!
 		oauth!
+		how to access a secondary calendar for a user.
