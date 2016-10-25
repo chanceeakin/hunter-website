@@ -9,3 +9,8 @@ A website for an opera singer.
 		google calendar api!
 		oauth!
 		how to access a secondary calendar for a user.
+
+### calendar
+	server side api
+	client side api call
+	
