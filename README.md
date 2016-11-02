@@ -13,4 +13,10 @@ A website for an opera singer.
 ### calendar
 	server side api
 	client side api call
+	google calendar scraper for non tech-savvy singer
+
+### Media Page
+	custom styled mp3 player
+	side nav bar
+	
 	
