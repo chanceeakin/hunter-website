@@ -2,15 +2,17 @@
 A website for an opera singer. 
 
 ### Things I Want to build
-	masonry based image gallery
-	custom mp3 player
+	masonry based image gallery? If he sends photos
+	finish custom audio player (multiple files)
 	embedded youtube links
 	calendar
-		google calendar api!
-		oauth!
+		google calendar api.
+		Link to hunter's new calendar.
 		how to access a secondary calendar for a user.
 
 ### calendar
 	server side api
 	client side api call
+	Figure out how Hunter wants items grouped
+	
 	
