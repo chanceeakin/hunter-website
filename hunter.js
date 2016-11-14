@@ -6,7 +6,7 @@ var logger = require('morgan');
 var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
-var calendar = require('./app/calendar.js');
+var calendar = require('./app/calendar');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -25,8 +25,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api', function (req, res) {
-	calendar(res);
-})
+	calendar.call(req, res);
+});
 
 app.listen(PORT, function () {
 	console.log('App listening on PORT: ' + PORT);
