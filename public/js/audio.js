@@ -1,14 +1,20 @@
-var audio = document.getElementById("audio-player");
+var audio = document.getElementById('audio-player');
 
 $(document).ready(function () {
 	$("#play-button").click(function () {
-		if ($(this).hasClass("unchecked")) {
+		if ($(this).hasClass('unchecked')) {
 			$(this)
 				.addClass("play-active")
 				.removeClass("play-inactive")
 				.removeClass("unchecked");
 			$(".info-two")
 				.addClass("info-active");
+			setTimeout(function() {
+				$('.icon-list')
+				.removeClass('hide');
+			}, 400);
+			$('.icon-list-play')
+				.addClass('hide');
 			$("#pause-button")
 				.addClass("scale-animation-active");
 			$(".waves-animation-one, #pause-button, .seek-field, .volume-icon, .volume-field, .info-two").show();
@@ -31,6 +37,10 @@ $(document).ready(function () {
 				.children(".icon")
 				.addClass("icon-pause")
 				.removeClass("icon-play");
+			$('.icon-list')
+				.addClass('hide');
+			$('.icon-list-play')
+				.removeClass('hide');
 			$(".info-two")
 				.removeClass("info-active");
 			$(".waves-animation-one, #pause-button, .seek-field, .volume-icon, .volume-field, .info-two").hide();
@@ -43,13 +53,15 @@ $(document).ready(function () {
 		}
 	});
 	$("#pause-button").click(function () {
-		$(this).children(".icon")
-			.toggleClass("icon-pause")
-			.toggleClass("icon-play");
+		var self = $(this);
 
 		if (audio.paused) {
+			$('.icon-pause').removeClass('hide');
+			$('.icon-pause-play').addClass('hide');
 			audio.play();
 		} else {
+			$('.icon-pause').addClass('hide');
+			$('.icon-pause-play').removeClass('hide');
 			audio.pause();
 		}
 	});
@@ -59,9 +71,6 @@ $(document).ready(function () {
 				.toggleClass("icon-play")
 				.toggleClass("icon-cancel");
 		}, 350);
-	});
-	$(".like").click(function () {
-		$(".icon-heart").toggleClass("like-active");
 	});
 });
 
@@ -88,11 +97,12 @@ function SeekBar() {
 
 audio.addEventListener("timeupdate", function () {
 	var duration = document.getElementById("duration");
-	var s = parseInt(audio.currentTime % 60);
+	var s = parseInt(audio.currentTime % 60, 10);
 	var m = parseInt((audio.currentTime / 60) % 60);
 	duration.innerHTML = m + ':' + s;
 }, false);
 
-Waves.init();
 Waves.attach("#play-button", ["waves-button", "waves-float"]);
 Waves.attach("#pause-button", ["waves-button", "waves-float"]);
+Waves.init();
+
