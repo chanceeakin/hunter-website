@@ -7,11 +7,13 @@ $(document).ready(function () {
 				.addClass("play-active")
 				.removeClass("play-inactive")
 				.removeClass("unchecked");
+			setTimeout(function () {
+				$('#play-button').css({'background-color' : '#444'})}, 400);
 			$(".info-two")
 				.addClass("info-active");
-			setTimeout(function() {
+			setTimeout(function () {
 				$('.icon-list')
-				.removeClass('hide');
+					.removeClass('hide');
 			}, 400);
 			$('.icon-list-play')
 				.addClass('hide');
@@ -32,7 +34,8 @@ $(document).ready(function () {
 			$(this)
 				.removeClass("play-active")
 				.addClass("play-inactive")
-				.addClass("unchecked");
+				.addClass("unchecked")
+				.css({'background-color' : '#26a69a'});
 			$("#pause-button")
 				.children(".icon")
 				.addClass("icon-pause")
@@ -51,27 +54,25 @@ $(document).ready(function () {
 			audio.pause();
 			audio.currentTime = 0;
 		}
-	});
-	$("#pause-button").click(function () {
-		var self = $(this);
+	}); $("#pause-button").click(function () {
+	var self = $(this);
 
-		if (audio.paused) {
-			$('.icon-pause').removeClass('hide');
-			$('.icon-pause-play').addClass('hide');
-			audio.play();
-		} else {
-			$('.icon-pause').addClass('hide');
-			$('.icon-pause-play').removeClass('hide');
-			audio.pause();
-		}
-	});
-	$("#play-button").click(function () {
-		setTimeout(function () {
-			$("#play-button").children(".icon")
-				.toggleClass("icon-play")
-				.toggleClass("icon-cancel");
-		}, 350);
-	});
+	if (audio.paused) {
+		$('.icon-pause').removeClass('hide');
+		$('.icon-pause-play').addClass('hide');
+		audio.play();
+	} else {
+		$('.icon-pause').addClass('hide');
+		$('.icon-pause-play').removeClass('hide');
+		audio.pause();
+	}
+}); $("#play-button").click(function () {
+	setTimeout(function () {
+		$("#play-button").children(".icon")
+			.toggleClass("icon-play")
+			.toggleClass("icon-cancel");
+	}, 350);
+});
 });
 
 function CreateSeekBar() {
@@ -105,4 +106,3 @@ audio.addEventListener("timeupdate", function () {
 Waves.attach("#play-button", ["waves-button", "waves-float"]);
 Waves.attach("#pause-button", ["waves-button", "waves-float"]);
 Waves.init();
-
