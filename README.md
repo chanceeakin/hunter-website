@@ -8,11 +8,14 @@ A website for an opera singer.
 	calendar
 		google calendar api.
 		Link to hunter's new calendar.
-		how to access a secondary calendar for a user.
 
 ### calendar
 	server side api
 	client side api call
 	Figure out how Hunter wants items grouped
+
+### Things from Hunter
+	New font. 
+	
 	
 	
