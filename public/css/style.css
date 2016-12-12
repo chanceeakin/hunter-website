@@ -385,12 +385,6 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: #444; }
 
-.calendar-ajax {
-  margin-bottom: 2rem; }
-  .calendar-ajax .calendar-summary {
-    display: flex;
-    justify-content: center; }
-
 nav ul a,
 nav .brand-logo {
   color: #444; }
