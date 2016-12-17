@@ -24,10 +24,10 @@ gulp.task('start', function () {
 		ext: 'js html',
 		env: { 'NODE_ENV': 'development' }
 	});
+	gulp.watch('scss/*.scss', ['sass']);
 });
 
 gulp.task('watch', function () {
 	gulp.watch('scss/*.scss', ['sass']);
-	gulp.watch('scss/materialize.scss', ['materialize']);
 	// Other watchers
 });

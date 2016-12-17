@@ -5,13 +5,19 @@ A website for an opera singer.
 	convert photos to a web friendly format
 	fill out the footer.
 
+### audio
+	add times and proper titles for audio
+	add play and pause buttons
+	style sliders
+	
 
 ### Things I Want to build
-	finish custom audio player (multiple files) or multiple players
-	embedded youtube links? - Hunter hasn't sent any, so probably not.
+	embedded youtube links - Hunter hasn't sent any, so probably not.
+	Use modals for those
 
 ### calendar
-	clean up moment and/or information
+	clean up moment and/or information.
+
 
 ### Things from Hunter
 	Roll new fonts into the site.

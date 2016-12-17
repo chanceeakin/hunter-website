@@ -28,7 +28,7 @@
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <div id="index-banner" class="parallax-container">
+    <div id="index-banner" class="index-banner parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
                 <br>
@@ -46,45 +46,56 @@
     <div class="container">
         <div class="section">
             <div class="row">
+                <div class="col s12 now-play white-text" id="nowPlay">
+                    <h4 class="left-audio" id="npAction">Paused...</h4>
+                    <h4 class="right-audio" id="npTitle"></h4>
+                </div>
                 <div class="col s12">
-                    <div class="audio-container">
-                        <div class="player z-depth-2 audio1">
-                            <ul class="player-info info-one">
-                                <li>"Hai già vinta la causa"</li>
-                                <li>Mozart</li>
-                                <li>04:39</li>
-                            </ul>
-                            <ul class="player-info info-two">
-                                <li>"Hai già vinta la causa"</li>
-                                <li>Mozart</li>
-                                <li><span id="duration"></span><i> / </i>4:39</li>
-                            </ul>
-                            <div id="play-button" class="unchecked">
-                                <i class="material-icons icon icon-play icon-list-play">play_arrow</i>
-                                <i class="material-icons icon icon-list hide">toc</i>
-                            </div>
-                            <div class="control-row">
-                                <div class="waves-animation-one teal lighten-1"></div>
-                                <div class="waves-animation-two"></div>
-                                <div id="pause-button">
-                                    <i class="material-icons icon icon-pause">pause</i>
-                                    <i class="material-icons icon icon-pause-play hide">play_arrow</i>
-                                </div>
-                                <div class="seek-field">
-                                    <input id="audioSeekBar" min="0" max="334" step="1" value="0" type="range" oninput="audioSeekBar()" onchange="this.oninput()">
-                                </div>
-                                <div class="volume-icon">
-                                    <i class="material-icons icon-volume-up">volume_up</i>
-                                </div>
-                                <div class="volume-field">
-                                    <input type="range" min="0" max="100" value="100" step="1" oninput="audio.volume = this.value/100" onchange="this.oninput()">
-                                </div>
-                            </div>
+                    <div class="audio-wrap">
+                        <audio preload class="audio1" id="audio1">Your browser does not support HTML5 Audio!</audio>
+                    </div>
+                    <div class="track center" id="tracks">
+                        <a class="btn-large waves-effect waves-light brown lighten-1" id="play"><i class="material-icons">play_arrow</i></a>
+                        <a class="btn-large waves-effect waves-light brown lighten-1" id="pause"><i class="material-icons">pause</i></a>
+                        <a class="btn-large waves-effect waves-light brown lighten-1" id="btnPrev"><i class="material-icons">skip_previous</i></a>
+                        <a class="btn-large waves-effect waves-light brown lighten-1" id="btnNext"><i class="material-icons">skip_next</i></a>
+                        <a class="btn-large waves-effect waves-light brown lighten-1" id="stop"><i class="material-icons">stop</i></a>
+                    </div>
+                    <div class="volume-container col s12">
+                        <div class="volume z-depth-1">
+                            <i class="white-text material-icons">volume_mute</i>
+                            <form action="#">
+                                <p class="range-field">
+                                  <input class="brown" type="range" onchange="setVolume()" id='volume' min=0 max=1 step=.01 value='1'>
+                                </p>
+                            </form>
                         </div>
                     </div>
-                    <audio id="audio-player" ontimeupdate="SeekBar()" ondurationchange="CreateSeekBar()" preload="auto" loop>
-                        <source src="../audio/count.mp3" type="audio/mpeg">
-                    </audio>
+                </div>
+                <div class="col s12 pl-wrap" id="plwrap">
+                    <ul class="pl-list white-text" id="plList">
+                        <li>
+                            <div class="pl-item">
+                                <div class="pl-num">01.</div>
+                                <div class="pl-title">Hai Gia vinta la causa</div>
+                                <div class="pl-length">2:46</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pl-item">
+                                <div class="pl-num">02.</div>
+                                <div class="pl-title">Votre Toast</div>
+                                <div class="pl-length">8:31</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pl-item">
+                                <div class="pl-num">03.</div>
+                                <div class="pl-title">Ya Vas Lyublyu</div>
+                                <div class="pl-length">5:02</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

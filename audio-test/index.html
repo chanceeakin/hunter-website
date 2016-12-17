@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    </head>
+    <body>
+<div class="container">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="nowPlay">
+                <span class="left" id="npAction">Paused...</span>
+                <span class="right" id="npTitle"></span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">&laquo;</a>
+                    <a id="btnNext">&raquo;</a>
+                </div>
+            </div>
+            <div id="plwrap">
+                <ul id="plList">
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">01.</div>
+                            <div class="plTitle">Hai Gia vinta la causa</div>
+                            <div class="plLength">2:46</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">02.</div>
+                            <div class="plTitle">Votre Toast</div>
+                            <div class="plLength">8:31</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">03.</div>
+                            <div class="plTitle">Ya Vas Lyublyu</div>
+                            <div class="plLength">5:02</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="audio.js"></script>
+</body>
+</html>

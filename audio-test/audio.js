@@ -8,10 +8,6 @@ var b = document.documentElement;
 b.setAttribute('data-useragent', navigator.userAgent);
 b.setAttribute('data-platform', navigator.platform);
 
-function setVolume() {
-    let mediaClip = document.getElementById("audio1");
-    audio1.volume = document.getElementById("volume").value;
-}
 
 // HTML5 audio player + playlist controls...
 // Inspiration: http://jonhall.info/how_to/create_a_playlist_for_html5_audio
@@ -21,7 +17,7 @@ jQuery(function ($) {
     if (supportsAudio) {
         var index = 0,
             playing = false,
-            mediaPath = '../audio/',
+            mediaPath = '../public/audio/',
             extension = '',
             tracks = [{
                 "track": 1,
@@ -44,12 +40,12 @@ jQuery(function ($) {
             npTitle = $('#npTitle'),
             audio = $('#audio1').bind('play', function () {
                 playing = true;
-                npAction.text('Now Playing');
+                npAction.text('Now Playing...');
             }).bind('pause', function () {
                 playing = false;
-                npAction.text('Ready to Play');
+                npAction.text('Paused...');
             }).bind('ended', function () {
-                npAction.text('Ready to Play');
+                npAction.text('Paused...');
                 if ((index + 1) < trackCount) {
                     index++;
                     loadTrack(index);
@@ -60,22 +56,6 @@ jQuery(function ($) {
                     loadTrack(index);
                 }
             }).get(0),
-            playButton = $('#play').click(() => {
-                if(!playing) {
-                    audio.play();
-                }
-            }),
-            pauseButton = $('#pause').click(() => {
-                if(playing) {
-                    audio.pause();
-                }
-            }),
-            stopButton = $('#stop').click(() => {
-                if(playing) {
-                    audio.pause();
-                    audio.currentTime = 0;
-                }
-            }),
             btnPrev = $('#btnPrev').click(function () {
                 if ((index - 1) > -1) {
                     index--;
