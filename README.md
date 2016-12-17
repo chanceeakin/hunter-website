@@ -1,21 +1,21 @@
 # hunter-website
-A website for an opera singer. 
+A website for an opera singer.
+
+### TO DO
+	convert photos to a web friendly format
+	fill out the footer.
+
 
 ### Things I Want to build
-	masonry based image gallery? If he sends photos
-	finish custom audio player (multiple files)
-	embedded youtube links
-	calendar
-		google calendar api.
-		Link to hunter's new calendar.
+	finish custom audio player (multiple files) or multiple players
+	embedded youtube links? - Hunter hasn't sent any, so probably not.
 
 ### calendar
-	server side api
-	client side api call
-	Figure out how Hunter wants items grouped
+	clean up moment and/or information
 
 ### Things from Hunter
-	New font. 
-	
-	
-	
+	Roll new fonts into the site.
+
+### The Footer Needs
+	Social Media links
+	Contact information
