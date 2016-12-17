@@ -6,18 +6,14 @@ A website for an opera singer.
 	fill out the footer.
 
 ### audio
-	add times and proper titles for audio
-	add play and pause buttons
-	style sliders
-	
+	finished
 
 ### Things I Want to build
 	embedded youtube links - Hunter hasn't sent any, so probably not.
-	Use modals for those
+	Use modals for embedded links
 
 ### calendar
 	clean up moment and/or information.
-
 
 ### Things from Hunter
 	Roll new fonts into the site.
@@ -25,3 +21,9 @@ A website for an opera singer.
 ### The Footer Needs
 	Social Media links
 	Contact information
+
+### testing
+	Mobile responsiveness check
+
+### accessibility
+	check photos and contrast

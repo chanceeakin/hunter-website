@@ -33,8 +33,9 @@ $brown-lighten: #8d6e63;
 //     }
 // }
 
-.volume-container {
+.slider-container {
     background-color: $color2;
+    margin-bottom: 0;
 
     form {
         p {
@@ -42,12 +43,12 @@ $brown-lighten: #8d6e63;
         }
     }
 
-    .volume {
+    .volume,
+    .tracking {
         background-color: $brown-lighten;
         border-radius: 3px;
-        float: center;
-        max-width: 25%;
         padding: 1rem;
+        padding-top: .3rem;
 
         i {
             padding: 1rem 0 0 1rem;

@@ -25,18 +25,18 @@ jQuery(function ($) {
             extension = '',
             tracks = [{
                 "track": 1,
-                "name": "Hai gia vinta la causa",
+                "name": "Hai già vinta la causa...",
                 "length": "04:39",
                 "file": "count"
             }, {
                 "track": 2,
                 "name": "Votre Toast, Je Peux vous le rendre",
-                "length": "08:31",
+                "length": "03:41",
                 "file": "votreToast"
             }, {
                 "track": 3,
                 "name": "Ya vas lyubylu",
-                "length": "05:02",
+                "length": "04:42",
                 "file": "yaVasLyublyu"
             }],
             trackCount = tracks.length,
@@ -47,8 +47,9 @@ jQuery(function ($) {
                 npAction.text('Now Playing');
             }).bind('pause', function () {
                 playing = false;
-                npAction.text('Ready to Play');
+                npAction.text('Paused');
             }).bind('ended', function () {
+                playing = false;
                 npAction.text('Ready to Play');
                 if ((index + 1) < trackCount) {
                     index++;
@@ -119,7 +120,10 @@ jQuery(function ($) {
                 loadTrack(id);
                 audio.play();
             };
+
         extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
         loadTrack(index);
+
+
     }
 });

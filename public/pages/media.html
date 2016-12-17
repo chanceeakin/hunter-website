@@ -47,12 +47,12 @@
         <div class="section">
             <div class="row">
                 <div class="col s12 now-play white-text" id="nowPlay">
-                    <h4 class="left-audio" id="npAction">Paused...</h4>
+                    <h4 class="left-audio" id="npAction">Player Ready</h4>
                     <h4 class="right-audio" id="npTitle"></h4>
                 </div>
                 <div class="col s12">
                     <div class="audio-wrap">
-                        <audio preload class="audio1" id="audio1">Your browser does not support HTML5 Audio!</audio>
+                        <audio preload controls class="audio1" id="audio1">Your browser does not support HTML5 Audio!</audio>
                     </div>
                     <div class="track center" id="tracks">
                         <a class="btn-large waves-effect waves-light brown lighten-1" id="play"><i class="material-icons">play_arrow</i></a>
@@ -61,38 +61,28 @@
                         <a class="btn-large waves-effect waves-light brown lighten-1" id="btnNext"><i class="material-icons">skip_next</i></a>
                         <a class="btn-large waves-effect waves-light brown lighten-1" id="stop"><i class="material-icons">stop</i></a>
                     </div>
-                    <div class="volume-container col s12">
-                        <div class="volume z-depth-1">
-                            <i class="white-text material-icons">volume_mute</i>
-                            <form action="#">
-                                <p class="range-field">
-                                  <input class="brown" type="range" onchange="setVolume()" id='volume' min=0 max=1 step=.01 value='1'>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
                 </div>
                 <div class="col s12 pl-wrap" id="plwrap">
                     <ul class="pl-list white-text" id="plList">
                         <li>
                             <div class="pl-item">
                                 <div class="pl-num">01.</div>
-                                <div class="pl-title">Hai Gia vinta la causa</div>
-                                <div class="pl-length">2:46</div>
+                                <div class="pl-title">"Hai già vinta la causa...vedrò mentr'io sospiro" - Mozart</italic></div>
+                                <div class="pl-length">04:39</div>
                             </div>
                         </li>
                         <li>
                             <div class="pl-item">
                                 <div class="pl-num">02.</div>
-                                <div class="pl-title">Votre Toast</div>
-                                <div class="pl-length">8:31</div>
+                                <div class="pl-title">"Votre Toast, Je Peux vous le rendre" - Bizet</div>
+                                <div class="pl-length">03:41</div>
                             </div>
                         </li>
                         <li>
                             <div class="pl-item">
                                 <div class="pl-num">03.</div>
-                                <div class="pl-title">Ya Vas Lyublyu</div>
-                                <div class="pl-length">5:02</div>
+                                <div class="pl-title">"Ya Vas Lyublyu" - Tchaikovsky</div>
+                                <div class="pl-length">4:42</div>
                             </div>
                         </li>
                     </ul>
@@ -136,7 +126,7 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../js/materialize.js"></script>
-    <script src="../moment/moment.js"></script>
+    <script src="../rangeslider.js/dist/rangeslider.min.js"></script>
     <script src="../js/init.js"></script>
     <script src="../js/hunter.js"></script>
     <script src="../js/audio.js"></script>
