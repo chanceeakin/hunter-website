@@ -99,8 +99,14 @@ function SeekBar() {
 audio.addEventListener("timeupdate", function () {
 	var duration = document.getElementById("duration");
 	var s = parseInt(audio.currentTime % 60, 10);
+	var ss;
+	if (s < 10) {
+		ss = '0' + s;
+	} else {
+		ss = s;
+	}
 	var m = parseInt((audio.currentTime / 60) % 60);
-	duration.innerHTML = m + ':' + s;
+	duration.innerHTML = m + ':' + ss;
 }, false);
 
 Waves.attach("#play-button", ["waves-button", "waves-float"]);
