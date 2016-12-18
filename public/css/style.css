@@ -77,6 +77,9 @@
   right: 21px;
   top: 0; }
 
+body {
+  font-family: 'Belleza', sans-serif; }
+
 nav ul a {
   color: #444; }
 

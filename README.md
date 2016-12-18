@@ -1,22 +1,12 @@
 # hunter-website
 A website for an opera singer.
 
-### TO DO
-	convert photos to a web friendly format
-	fill out the footer.
-
-### audio
-	finished
-
 ### Things I Want to build
 	embedded youtube links - Hunter hasn't sent any, so probably not.
 	Use modals for embedded links
 
 ### calendar
 	clean up moment and/or information.
-
-### Things from Hunter
-	Roll new fonts into the site.
 
 ### The Footer Needs
 	Social Media links
@@ -27,3 +17,10 @@ A website for an opera singer.
 
 ### accessibility
 	check photos and contrast
+	text legibility over photos
+	convert photos to a web friendly format
+
+### finished
+	api key in cloud
+	audio
+	new font added
