@@ -7,10 +7,12 @@ A website for an opera singer.
 
 ### calendar
 	clean up moment and/or information.
+	add regex for multi word events and replace spaces with dashes
 
 ### The Footer Needs
 	Social Media links
 	Contact information
+	add completed footer to other static pages
 
 ### testing
 	Mobile responsiveness check
@@ -18,7 +20,7 @@ A website for an opera singer.
 ### accessibility
 	check photos and contrast
 	text legibility over photos
-	convert photos to a web friendly format
+	convert photos to a web friendly format - finished
 
 ### finished
 	api key in cloud

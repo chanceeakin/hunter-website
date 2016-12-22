@@ -34,11 +34,9 @@ $(document).ready(() => {
 				$('#' + activeID[k].summary).append('<div class="col s12 m6 l4 center calendar-ajax '
 				 + activeID[k].summary + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en')
 				 + '</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a')
-				 + '</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + activeID[k].description + '">Tickets</a></div></div></div>');
+				 + '</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + activeID[k].description
+				 + '">Info and Tickets</a></div></div></div>');
 			}
 		}
-			// console.log(moment(operas[i].start.dateTime, moment.ISO_8601).format('HH:mm'));
-			// if (response.items[i].description) {
-				// $('#calendarFill').append('<div class="calendar-ajax"><div class="calendar-summary">' + response.items[i].summary + '</div><div class="calendar-date">' + moment(response.items[i].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en') + '</div><div class="calendar-time">' + moment(response.items[i].start.dateTime, moment.ISO_8601).format('hh:mm a') + '</div></div>');
 	});
 });
