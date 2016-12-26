@@ -26,12 +26,6 @@ $brown-lighten: #8d6e63;
     text-align: center;
 
 }
-//
-// form {
-//     p {
-//         margin-top: 0;
-//     }
-// }
 
 .slider-container {
     background-color: $color2;
@@ -115,4 +109,18 @@ $brown-lighten: #8d6e63;
     position: absolute;
     right: 21px;
     top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .left-audio {
+        display: none;
+    }
+
+    .right-audio {
+        text-align: center;
+    }
+
+    a.btn-large {
+        margin-bottom: 5px;
+    }
 }

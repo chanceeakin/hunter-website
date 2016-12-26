@@ -48,7 +48,7 @@ p {
 .parallax {
 
     img {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -88,6 +88,12 @@ footer.page-footer {
 }
 
 @media only screen and (max-width: 600px) {
+    .parallax-container {
+        img {
+            max-width: 150%;
+        }
+    }
+
     .index-banner {
         .section {
             top: 0;
