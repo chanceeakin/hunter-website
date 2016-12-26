@@ -10,6 +10,11 @@ function groupBy (array, f) {
 	});
 }
 
+const regEx = (str) => {
+	let convertedString = str.replace(/\s/g, '');
+	return convertedString;
+};
+
 $(document).ready(() => {
 	$('#download-button').click(() => {
 		$('html, body').animate({
@@ -28,11 +33,11 @@ $(document).ready(() => {
 			return [item.summary];
 		});
 		for (let i = 0; i < operas.length; i++) {
-			$('#calendarFill').append('<div class="row" id="' + operas[i][0].summary + '"><div class="col s12 center"><h5 class="brown-text">' + operas[i][0].summary + '</h5></div></div>');
+			$('#calendarFill').append('<div class="row" id="' + regEx(operas[i][0].summary) + '"><div class="col s12 center"><h5 class="brown-text">' + operas[i][0].summary + '</h5></div></div>');
 			let activeID = operas[i];
 			for (let k = 0; k < activeID.length; k++) {
-				$('#' + activeID[k].summary).append('<div class="col s12 m6 l4 center calendar-ajax '
-				 + activeID[k].summary + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en')
+				$('#' + regEx(activeID[k].summary)).append('<div class="col s12 m6 l4 center calendar-ajax '
+				 + regEx(activeID[k].summary) + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en')
 				 + '</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a')
 				 + '</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + activeID[k].description
 				 + '">Info and Tickets</a></div></div></div>');
