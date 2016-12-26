@@ -3,8 +3,11 @@
 
 $color1: #444;
 $color2: #26a69a;
+$black-overlay: rgba(20, 20, 20, .2);
+$white: #fff;
+$darker-overlay: rgba(0, 0, 0, .5);
 
-$white-overlay: rgba(255, 255, 255, .9);
+$white-overlay: rgba(120, 120, 120, .5);
 
 body {
     font-family: 'Belleza', sans-serif;
@@ -22,6 +25,10 @@ nav {
     }
 }
 
+h1 {
+    font-size: 5.7rem;
+}
+
 p {
     line-height: 2rem;
 }
@@ -30,7 +37,16 @@ p {
     width: 100%;
 }
 
+.image-darken-wrapper {
+    background: $black-overlay;
+}
+
+.white-overlay {
+    background: $white-overlay;
+}
+
 .parallax {
+
     img {
         width: 100%;
     }
@@ -49,6 +65,11 @@ p {
     .section {
         min-width: 100%;
     }
+}
+
+footer.page-footer {
+    margin: 0;
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -79,11 +100,5 @@ p {
 
     .material-icons {
         font-size: inherit;
-    }
-}
-
-footer {
-    .page-footer {
-        margin: 0;
     }
 }

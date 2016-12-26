@@ -4,4 +4,5 @@ $(document).ready(function () {
 			scrollTop: $('#scroll-here').offset().top
 		}, 2000);
 	});
+	 $('.materialboxed').materialbox();
 });
