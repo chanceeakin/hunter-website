@@ -1,4 +1,4 @@
-function groupBy (array, f) {
+function groupBy(array, f) {
 	var groups = {};
 	array.forEach((o) => {
 		var group = JSON.stringify(f(o));
@@ -26,7 +26,9 @@ $(document).ready(() => {
 		type: 'GET',
 		dataType: 'JSON'
 	}).done((response) => {
-		if (!response.items) {
+		console.log(response);
+		if (!response.items || response.items.length === 0) {
+			$('#calendarFill').append('<div class="row"><div class="col s12 center"><h3 class="brown-text">Upcoming Productions listed here</h3></div></div>');
 			return;
 		}
 		let operas = groupBy(response.items, (item) => {
@@ -36,11 +38,11 @@ $(document).ready(() => {
 			$('#calendarFill').append('<div class="row" id="' + regEx(operas[i][0].summary) + '"><div class="col s12 center"><h5 class="brown-text">' + operas[i][0].summary + '</h5></div></div>');
 			let activeID = operas[i];
 			for (let k = 0; k < activeID.length; k++) {
-				$('#' + regEx(activeID[k].summary)).append('<div class="col s12 m6 l4 center calendar-ajax '
-				 + regEx(activeID[k].summary) + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en')
-				 + '</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a')
-				 + '</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + activeID[k].description
-				 + '">Info and Tickets</a></div></div></div>');
+				$('#' + regEx(activeID[k].summary)).append('<div class="col s12 m6 l4 center calendar-ajax ' +
+					regEx(activeID[k].summary) + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en') +
+					'</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a') +
+					'</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + activeID[k].description +
+					'">Info and Tickets</a></div></div></div>');
 			}
 		}
 	});

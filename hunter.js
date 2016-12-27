@@ -10,15 +10,19 @@ var calendar = require('./app/calendar');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.json({
+	type: 'application/vnd.api+json'
+}));
 
 app.use(express.static(process.cwd() + '/bower_components'));
 app.use(express.static(process.cwd() + '/public'));
 
 var universalRoute = function (res) {
-	res.sendFile(path.join(__dirname, 'public', 'index.html'));
+	res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'));
 };
 
 app.get('/', function (res) {
