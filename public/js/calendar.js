@@ -50,7 +50,7 @@ $(document).ready(() => {
 				$('#' + regExID(activeID[k].summary)).append('<div class="col s12 m6 l4 center calendar-ajax ' +
 					regExID(activeID[k].summary) + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en') +
 					'</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a') +
-					'</p><p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + regExURL(activeID[k].description) +
+					'</p><p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + regExURL(operas[i][0].description) +
 					'">Info and Tickets</a></div></div></div>');
 			}
 		}
