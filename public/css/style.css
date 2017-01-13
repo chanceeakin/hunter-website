@@ -144,3 +144,6 @@ footer.page-footer {
   padding: 0 15px; }
   .icon-block .material-icons {
     font-size: inherit; }
+
+.no-margin {
+  margin: 0; }
