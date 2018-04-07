@@ -16,8 +16,12 @@ const regExID = (str) => {
 };
 
 const regExURL = (str) => {
+	console.log(str);
 	let convertedString = str.match(/((\w+:\/\/)[-a-zA-Z0-9:@;?&=\/%\+\.\*!'\(\),\$_\{\}\^~\[\]`#|]+)/g);
-	return convertedString[0];
+	if (convertedString) {
+		return convertedString[0];
+	}
+	return '#'
 }
 
 const regExNoURL = (str) => {
@@ -44,14 +48,19 @@ $(document).ready(() => {
 			return [item.summary];
 		});
 		for (let i = 0; i < operas.length; i++) {
+			console.log(operas[i]);
 			$('#calendarFill').append('<div class="row" id="' + regExID(operas[i][0].summary) + '"><div class="col s12 center"><h5 class="brown-text">' + operas[i][0].summary + '</h5><p>' + regExNoURL(operas[i][0].description) + '</p></div></div>');
 			let activeID = operas[i];
+			let url = undefined
+			if (activeID[0] && activeID[0].description) {
+				console.log(activeID[0].description);
+				url = regExURL(activeID[0].description)
+			}
 			for (let k = 0; k < activeID.length; k++) {
 				$('#' + regExID(activeID[k].summary)).append('<div class="col s12 m6 l4 center calendar-ajax ' +
 					regExID(activeID[k].summary) + '"><div class="card teal lighten-1 z-depth-2 text-black"><div class="card-content white-text"><span class="card-title">' + activeID[k].summary + '</span><p class="calendar-date">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('MMM-DD-YYYY', 'en') +
 					'</p><p class="calendar-time">' + moment(activeID[k].start.dateTime, moment.ISO_8601).format('hh:mm a') +
-					'</p><p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="' + regExURL(operas[i][0].description) +
-					'">Info and Tickets</a></div></div></div>');
+					`</p><div class="card-action"><a class="btn waves-effect waves-light brown lighten-1" href="${url}">Info and Tickets</a></div></div></div>`);
 			}
 		}
 	});
