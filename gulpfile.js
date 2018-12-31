@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
+const uglify = require('gulp-uglify')
 
 gulp.task('sass', function () {
 	return gulp.src('scss/style.scss')
@@ -29,5 +30,6 @@ gulp.task('start', function () {
 
 gulp.task('watch', function () {
 	gulp.watch('scss/*.scss', ['sass']);
-	// Other watchers
 });
+
+gulp.task('build', ['sass']);

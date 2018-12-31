@@ -16,7 +16,6 @@ const regExID = (str) => {
 };
 
 const regExURL = (str) => {
-	console.log(str);
 	let convertedString = str.match(/((\w+:\/\/)[-a-zA-Z0-9:@;?&=\/%\+\.\*!'\(\),\$_\{\}\^~\[\]`#|]+)/g);
 	if (convertedString) {
 		return convertedString[0];
@@ -48,12 +47,10 @@ $(document).ready(() => {
 			return [item.summary];
 		});
 		for (let i = 0; i < operas.length; i++) {
-			console.log(operas[i]);
 			$('#calendarFill').append('<div class="row" id="' + regExID(operas[i][0].summary) + '"><div class="col s12 center"><h5 class="brown-text">' + operas[i][0].summary + '</h5><p>' + regExNoURL(operas[i][0].description) + '</p></div></div>');
 			let activeID = operas[i];
 			let url = undefined
 			if (activeID[0] && activeID[0].description) {
-				console.log(activeID[0].description);
 				url = regExURL(activeID[0].description)
 			}
 			for (let k = 0; k < activeID.length; k++) {
