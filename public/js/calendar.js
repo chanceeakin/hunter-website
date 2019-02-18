@@ -44,7 +44,8 @@ $(document).ready(() => {
   $.ajax({
     url: "https://hale-treat-133723.appspot.com/calendar",
     type: "GET",
-    dataType: "JSON"
+    dataType: "JSON",
+    "Access-Control-Allow-Origin": "*"
   }).done(response => {
     if (!response.items || response.items.length === 0) {
       $("#calendarFill").append(
