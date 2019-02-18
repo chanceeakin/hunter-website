@@ -16,7 +16,6 @@ const regExID = str => {
 };
 
 const regExURL = str => {
-  console.log(str);
   let convertedString = str.match(
     /((\w+:\/\/)[-a-zA-Z0-9:@;?&=\/%\+\.\*!'\(\),\$_\{\}\^~\[\]`#|]+)/g
   );
